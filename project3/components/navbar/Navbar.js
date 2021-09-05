@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import "./navbar.css";
+import { Link } from 'react-router-dom';
+
 
 
 export default class Navbar extends Component {
@@ -20,8 +22,9 @@ export default class Navbar extends Component {
             <
             div className = "navbar__container" >
             <
-            a href = "#home"
-            id = "navbar__logo" > HALID < /a>
+            Link to = "/"
+            href = "#home"
+            id = "navbar__logo" > HALID < /Link>
 
             <
             div className = "navbar__toggle"
@@ -40,41 +43,46 @@ export default class Navbar extends Component {
             <
             li className = "navber__item" >
             <
-            a href = "#home"
+            Link to = "/"
+            href = "#home"
             className = "navbar__links"
-            id = "home-page" > Home < /a> <
+            id = "home-page" > Home < /Link> <
             /li>
 
             <
             li className = "navber__item" >
             <
-            a href = "#about"
+            Link to = "/product"
+            href = "#about"
             className = "navbar__links"
-            id = "about-page" > Product < /a> <
+            id = "about-page" > Product < /Link> <
             /li>
 
             <
             li className = "navber__item" >
             <
-            a href = "#services"
+            Link to = "/about"
+            href = "#services"
             className = "navbar__links"
-            id = "services-page" > About Us < /a> <
+            id = "services-page" > About Us < /Link> <
             /li>
 
             <
             li className = "navber__btn" >
             <
-            a href = "#sign-up"
+            Link to = "/contact"
+            href = "#sign-up"
             className = "button"
-            id = "signup" > Contact < /a> <
+            id = "signup" > Contact < /Link> <
             /li>
 
             <
             li className = "navber__btn" >
             <
-            a href = "#sign-up"
+            Link to = "/sign up"
+            href = "#sign-up"
             className = "button"
-            id = "signup" > Sign up < /a> <
+            id = "signup" > Sign up < /Link> <
             /li>
 
             <

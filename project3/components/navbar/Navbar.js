@@ -1,59 +1,79 @@
 import React, { Component } from 'react';
-import Navbar.css from './Navbar';
+import "./navbar.css";
+
 
 export default class Navbar extends Component {
+    openMenu() {
+        const menu = document.querySelector("#mobile-menu");
+        const menuLinks = document.querySelector(".navbar__menu");
+
+        menu.addEventListener("click", () => {
+            menuLinks.classList.toggle("active")
+            menu.classList.toggle("is-active")
+        })
+    }
     render() {
         return (
             // <!-- Navbar Section -->
             <
-            nav class = "navbar" >
+            nav className = "navbar" >
             <
-            div class = "navbar__container" >
+            div className = "navbar__container" >
             <
             a href = "#home"
-            id = "navbar__logo" > MESUT < /a>
+            id = "navbar__logo" > HALID < /a>
 
             <
-            div class = "navbar__toggle"
-            id = "mobile-menu" >
+            div className = "navbar__toggle"
+            id = "mobile-menu"
+            onClick = {
+                () => this.openMenu() } >
             <
-            span class = "bar" > < /span> <
-            span class = "bar" > < /span> <
-            span class = "bar" > < /span> <
+            span className = "bar" > < /span> <
+            span className = "bar" > < /span> <
+            span className = "bar" > < /span> <
             /div>
 
             <
-            ul class = "navbar__menu" >
+            ul className = "navbar__menu" >
 
             <
-            li class = "navber__item" >
+            li className = "navber__item" >
             <
             a href = "#home"
-            class = "navbar__links"
+            className = "navbar__links"
             id = "home-page" > Home < /a> <
             /li>
 
             <
-            li class = "navber__item" >
+            li className = "navber__item" >
             <
             a href = "#about"
-            class = "navbar__links"
-            id = "about-page" > About < /a> <
+            className = "navbar__links"
+            id = "about-page" > Product < /a> <
             /li>
 
             <
-            li class = "navber__item" >
+            li className = "navber__item" >
             <
             a href = "#services"
-            class = "navbar__links"
-            id = "services-page" > Services < /a> <
+            className = "navbar__links"
+            id = "services-page" > About Us < /a> <
             /li>
 
             <
-            li class = "navber__btn" >
+            li className = "navber__btn" >
             <
             a href = "#sign-up"
-            class = "button"
+            className = "button"
+            id = "signup" > Contact < /a> <
+            /li>
+
+            <
+            li className = "navber__btn" >
+            <
+            a href = "#sign-up"
+            className = "button"
             id = "signup" > Sign up < /a> <
             /li>
 
@@ -63,4 +83,4 @@ export default class Navbar extends Component {
             /nav>
         )
     }
-}
+};

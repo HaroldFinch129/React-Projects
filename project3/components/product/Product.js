@@ -1010,10 +1010,13 @@ export default class Product extends Component {
 
     render() {
         return (
-            <div>
+          <div>
                 <BookList
-                    // books={this.state.books}
+                    books={this.state.books}
+           
+                    
                 />
+                
             </div>
         )
     }

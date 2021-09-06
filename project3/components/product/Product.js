@@ -1,11 +1,10 @@
-import React, { Component } from 'react'
-import BookList from './BookList'
-import "./product.css"
+import React from 'react';
+import BookList from './BookList';
+import "./product.css";
 
-export default class Product extends Component {
+const Product = () => {
 
-    state = { 
-        books : [
+    const books = [
         {
           "author": "Chinua Achebe",
           "country": "Nigeria",
@@ -1007,22 +1006,22 @@ export default class Product extends Component {
           "year": 1951
         }
       ]
+      return (
+          <div className="product">
+              <BookList
+                  books={books}
+              />
+              {/* <img src="./images/a-Dolls-house.jpg" />
+              {console.log(`./${this.state.books[0].imageLink}`)} */}
+          </div>
+      )
     }
 
-    render() {
-        return (
-            <div className="product">
-                <BookList
-                    books={this.state.books}
-                />
-                {/* <img src="./images/a-Dolls-house.jpg" />
-                {console.log(`./${this.state.books[0].imageLink}`)} */}
-            </div>
-        )
-    }
-}
+
+   
 
 
+export default  Product;
 /* {
     "author": "Chinua Achebe",
     "country": "Nigeria",

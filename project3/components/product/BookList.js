@@ -1,18 +1,20 @@
-import React, { Component } from 'react'
+import React from 'react'
 import Book from './Book'
 
-export default class BookList extends Component {
-    render() {
+const BookList = ({books}) => {
+    
         return (
             <div className="product__list">
                 {
-                    this.props.books.map(
+                    books.map(
                         (book, index) => (
-                            <Book ali={book} key={index}/>
+                            <Book book={book} key={index}/>
                         )
                     )
                 }
             </div>
         )
-    }
+    
 }
+
+export default BookList;

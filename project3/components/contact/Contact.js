@@ -1,8 +1,7 @@
-import React, { Component } from 'react'
+import React from 'react'
 import "./contact.css"
 
-export default class Contact extends Component {
-    render() {
+const Contact =() => {
         return (
             <div className="contact1">
                 <div className="container-contact1">
@@ -42,4 +41,5 @@ export default class Contact extends Component {
             </div>
         )
     }
-}
+
+    export default Contact;

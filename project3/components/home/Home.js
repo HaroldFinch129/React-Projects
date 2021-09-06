@@ -1,22 +1,90 @@
-import React, { Component } from 'react'
+import React, { useState } from 'react'
+import "./home.css"
 
-export default class Home extends Component {
-    render() {
+ const Home = () => {
+
+     const cards = [
+             {
+                image: "https://picsum.photos/200/300",
+                title: "başlık 1",
+                desc: "Buraya uzun bir açıklama gelebilir",
+                b1: "1",
+                b2: "2",
+                b3: "3"
+            },
+            {
+                image: "https://picsum.photos/200/300",
+                title: "başlık 2",
+                desc: "Buraya uzun bir açıklama gelebilir",
+                b1: "1",
+                b2: "2",
+            },
+            {
+                image: "https://picsum.photos/200/300",
+                title: "başlık 3",
+                desc: "Buraya uzun bir açıklama gelebilir",
+                b1: "1",
+                b3: "3"
+            },
+            {
+                image: "https://picsum.photos/200/300",
+                title: "başlık 4",
+                desc: "Buraya uzun bir açıklama gelebilir",
+                b2: "2",
+                b3: "3"
+            },
+        ]
+    
+
+    const [kartlar, setKartlar] = useState(cards)
+
+    
         return (
 
-            <div>
-                <div className="container-fluid bg-primary min-vh-100 p-5 d-flex">
-                    <div className="bg-warning m-4 d-flex justify-content-center align-items-center rounded" style={{ width: "300px", height: "300px" }}>
-                        <span className="fas fa-user" style={{fontSize:"16rem"}}></span>
+            <div className="main home">
+
+                <section className="home__section">
+                
+                    <div className="icon__container">
+                        <span className="fas fa-user"></span>
                     </div>
 
-                    <div className="m-4 d-flex flex-column justify-content-center align-items-center" style={{ width: "300px", height: "300px" }}>
-                        <h2 className="" style={{color:"purple", fontSize:"5rem"}}>Welcome!</h2>
-                        <p style={{fontSize:"2em", }}>lorem ipsum, lorem</p>
-                        <button>Start</button>
+                    <div className="section__info">
+                        <h2>Welcome!</h2>
+                        <p>lorem ipsum, lorem</p>
+                        <button className="btn btn-danger">Start</button>
                     </div>
-                </div>
+
+                </section>
+
+                <section className="home__section bg-light">
+                    {
+                        kartlar.map((card, index) => (
+                            <article className="home__card" key={index}>
+
+                                <div className="card__img">
+                                    <img src={card.image} />
+                                </div>
+
+                                <div className="card__info">
+                                    <h2>{card.title}</h2>
+                                    <p>{card.desc}</p>
+                                    <div className="badge__container">
+                                        {card.b1 ? <span className="badge green">{card.b1}</span> : ""}
+                                        {card.b2 ? <span className="badge blue">{card.b2}</span> : ""}
+                                        {card.b3 ? <span className="badge red">{card.b3}</span> : ""}
+                                    </div>
+                                </div>
+
+                            </article>
+                        ))
+                    }
+
+
+                </section>
             </div>
         )
-    }
+    
 }
+
+export default Home;

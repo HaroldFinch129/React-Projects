@@ -1,9 +1,10 @@
 import React, { Component } from 'react'
 import BookList from './BookList'
+import "./product.css"
 
 export default class Product extends Component {
 
-    state ={ 
+    state = { 
         books : [
         {
           "author": "Chinua Achebe",
@@ -1010,13 +1011,12 @@ export default class Product extends Component {
 
     render() {
         return (
-          <div>
+            <div className="product">
                 <BookList
                     books={this.state.books}
-           
-                    
                 />
-                
+                {/* <img src="./images/a-Dolls-house.jpg" />
+                {console.log(`./${this.state.books[0].imageLink}`)} */}
             </div>
         )
     }
